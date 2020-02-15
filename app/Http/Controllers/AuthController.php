@@ -65,6 +65,13 @@ class AuthController extends Controller
         }
     }
 
+    public function update(Request $request){
+
+        auth()->user()->update($request->all());
+        return response()->json(["state"=>"data has been update","user" =>auth()->user()],200);
+
+    }
+
     /**
      * Get the authenticated User
      *
